@@ -28,6 +28,11 @@ header {
   border-bottom-left-radius: 10px;
 }
 
+header > h4{
+      color: white;
+      margin-left: 135px;
+}
+
 header input {
   width: 100%;
   height: 50px;
@@ -103,10 +108,18 @@ header button svg .fill {
 
 .container {
   width: 100%;
-  float: left;
+  margin-left: -15px!important;
   padding: 15px;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+
 }
 
+.modal-content{
+  background-color: #DCDCDC!important;
+}
+.modal-footer{
+  background-color: #DCDCDC!important;
+}
 ul.todo {
   width: 100%;
   float: left;
@@ -135,14 +148,21 @@ ul.todo li:last-of-type {
 }
 
 ul.todo li .buttons {
-  width: 100px;
+  width: 50px;
   height: 50px;
-
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin-left: 100px;
+  margin-top: -50px;
 }
 
+ul.todo li .parcial {
+  width: 50px;
+  height: 50px;
+  margin-left: 160px;
+  margin-top: -50px;
+}
+ul.todo li .select {
+ display: none;
+}
 ul.todo li .buttons button {
   width: 50px;
   height: 50px;
@@ -169,83 +189,6 @@ ul.todo li .buttons button:last-of-type:before {
   left: 0;
 }
 
-ul.todo li .buttons button svg {
-  width: 22px;
-  height: 22px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  margin: -11px 0 0 -11px;
-}
-
-ul.todo li .buttons button.complete svg {
-  border-radius: 11px;
-  border: 1.5px solid #25b99a;
-
-  transition: background 0.2s ease;
-}
-
-ul.todo#completed li .buttons button.complete svg {
-  background: #25b99a;
-  border: 0px;
-}
-
-ul.todo:not(#completed) li .buttons button.complete:hover svg {
-  background: rgba(37, 185, 154, 0.75);
-}
-
-ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
-  fill: #fff;
-}
-
-ul.todo#completed li .buttons button.complete svg .fill {
-  fill: #fff;
-}
-
-ul.todo li .buttons button svg .fill {
-  transition: fill 0.2s ease;
-}
-
-ul.todo li .buttons button.remove svg .fill {
-  fill: #c0cecb;
-}
-
-ul.todo li .buttons button.remove:hover svg .fill {
-  fill: #e85656;
-}
-
-ul.todo li .buttons button.complete svg .fill {
-  fill: #25b99a;
-}
-
-ul.todo#completed {
-  position: relative;
-  padding: 60px 0 0 0;
-}
-
-ul.todo#completed:before {
-  content: '';
-  width: 150px;
-  height: 1px;
-  background: #d8e5e0;
-
-  position: absolute;
-  top: 30px;
-  left: 50%;
-
-  margin: 0 0 0 -75px;
-}
-
-ul.todo#todo:empty:after {
-  content: '¡No tienes nada por hacer!';
-  margin: 15px 0 0 0;
-}
-
-ul.todo#completed:empty:after {
-  content: 'Aún no has completado ninguna tarea.';
-}
 
 ul.todo#todo:after,
 ul.todo#completed:after {
@@ -254,4 +197,85 @@ ul.todo#completed:after {
   text-align: center;
   font-size: 12px;
   color: #aaa;
+}
+
+/* The container */
+.container {
+  width: 100%;
+  float: left;
+  padding: 15px;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  margin-top: -40px;
+  margin-left:80px;
+  height: 25px;
+  width: 25px;
+  background-color:white;
+  border: 1.5px solid #25b99a;
+  border-radius: 100px;
+}
+
+.check2{
+  margin-left: 165px;
+}
+
+.check3{
+  margin-left: 95px;
+}
+/* On mouse-over, add a grey background color */
+.checkmark:hover  {
+  background: white;
+  border: 1.5px solid #25b99a;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #25b99a;
+  fill: white;
+
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  color: #25b99a!important;
+  display: block;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #25b99a;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

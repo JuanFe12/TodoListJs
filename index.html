@@ -20,39 +20,61 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</head>
-	<body>
+	<body >
+
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-      </button>
-      
+        <button type="button" class="btn btn-primary" data-toggle="modal" id="modal" data-target="#exampleModal">
+           Get Data
+        </button>
+        <div id="state">
+
+          </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <header class="modal-header">
 
-                <input type="text" placeholder="Ingrese una actividad..." id="item">
-                <button id="add">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><g><path class="fill" d="M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z"/></g></svg>
-                </button>
-    
-                
-            </header>
+               <p style="color: white; margin-left: 165px;">Lista de tareas</p>
+              </header>
+            <div class="container" id="mostrar" onclick="toggle_visibility()" >
+                    <!--<ul class="todo" id="todo" >
+                        <li id="mostrar1"><p id="output"></p> <br>
+                          <div  class="select">
 
-            <div class="container">
-                    <ul class="todo" id="todo"></ul>
-        
-                    <ul class="todo" id="completed"></ul>
+                                <label class=""> 
+                                    <p  style="margin-top: 15px;" class="show " id="option" ></p>
+                                    <input type="checkbox" name="check" id="check" value="archived" onclick="onlyOne(this)" onchange="sendData(this)">
+                                    <span class="checkmark"></span>
+                                  </label><br>
+   
+                                  <label class="">
+                                      <p  style="margin-top: 15px;" class="show " id="option1"></p>
+                                      <input type="checkbox"  name="check" id="check" value="partially_achieved"  onclick="onlyOne(this)" onchange="sendData(this)">
+                                      <span class="checkmark check2"></span>
+                                  </label><br>
+                                  <label class=""> 
+                                        <p  style="margin-top: 15px;" class="show " id="option2" ></p>
+                                        <p  style="margin-top: 15px;" class="show " >
+                                            <input type="checkbox" name="check" id="check" value="unachieved"  onclick="onlyOne(this)" onchange="sendData(this)">
+                                        <span class="checkmark check3"></span>
+                                  </label>
+                              </div>
+                          </li>
+                     </ul>-->
+              </div>
                 </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
           </div>
         </div>
-      </div>
 
+      <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+      </script>
+    <script src="js/main.js"></script>
+    <script src="js/request.js"></script>
 
-		<script src="main.js"></script>
 	</body>
 </html>
